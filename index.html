@@ -1,611 +1,109 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>AITC Security | Professional Security Solutions</title>
-
-    <meta name="description" content="AITC Security provides professional security cameras, alarm systems, access control and fire monitoring for homes and businesses.">
-
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            color: #17202a;
-            background: #ffffff;
-            line-height: 1.6;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        /* HEADER */
-
-        header {
-            background: #071a33;
-            color: white;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-        }
-
-        .nav {
-            min-height: 82px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo {
-            font-size: 28px;
-            font-weight: 800;
-            letter-spacing: 1px;
-        }
-
-        .logo span {
-            color: #5bbcff;
-        }
-
-        nav {
-            display: flex;
-            gap: 30px;
-            align-items: center;
-        }
-
-        nav a {
-            font-size: 15px;
-            font-weight: 600;
-            opacity: 0.95;
-        }
-
-        nav a:hover {
-            color: #5bbcff;
-        }
-
-        .quote-button {
-            background: #ffffff;
-            color: #071a33;
-            padding: 13px 21px;
-            border-radius: 5px;
-            font-weight: 800;
-        }
-
-        .quote-button:hover {
-            background: #5bbcff;
-            color: white;
-        }
-
-        /* HERO */
-
-        .hero {
-            min-height: 650px;
-            display: flex;
-            align-items: center;
-            background:
-                linear-gradient(rgba(4,18,38,0.84), rgba(4,18,38,0.84)),
-                url("https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1800&q=80")
-                center/cover;
-            color: white;
-        }
-
-        .hero-content {
-            max-width: 750px;
-        }
-
-        .eyebrow {
-            color: #5bbcff;
-            font-weight: 800;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 18px;
-        }
-
-        h1 {
-            font-size: clamp(45px, 6vw, 76px);
-            line-height: 1.05;
-            margin-bottom: 25px;
-        }
-
-        .hero p {
-            font-size: 21px;
-            max-width: 650px;
-            margin-bottom: 35px;
-            color: #e4edf7;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .primary-button,
-        .secondary-button {
-            padding: 16px 27px;
-            border-radius: 5px;
-            font-weight: 800;
-            display: inline-block;
-        }
-
-        .primary-button {
-            background: #5bbcff;
-            color: #071a33;
-        }
-
-        .secondary-button {
-            border: 2px solid white;
-            color: white;
-        }
-
-        .primary-button:hover {
-            background: white;
-        }
-
-        .secondary-button:hover {
-            background: white;
-            color: #071a33;
-        }
-
-        /* SERVICES */
-
-        .services {
-            padding: 90px 0;
-            background: #f4f7fa;
-        }
-
-        .section-heading {
-            text-align: center;
-            max-width: 750px;
-            margin: 0 auto 55px;
-        }
-
-        .section-heading h2 {
-            font-size: 43px;
-            color: #071a33;
-            margin-bottom: 15px;
-        }
-
-        .section-heading p {
-            color: #5d6875;
-            font-size: 18px;
-        }
-
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 22px;
-        }
-
-        .service-card {
-            background: white;
-            padding: 35px 28px;
-            border-radius: 8px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.07);
-            transition: transform 0.2s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .service-icon {
-            font-size: 38px;
-            margin-bottom: 20px;
-        }
-
-        .service-card h3 {
-            color: #071a33;
-            font-size: 23px;
-            margin-bottom: 12px;
-        }
-
-        .service-card p {
-            color: #647080;
-        }
-
-        /* WHY AITC */
-
-        .why {
-            padding: 95px 0;
-        }
-
-        .why-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 70px;
-            align-items: center;
-        }
-
-        .why h2 {
-            font-size: 43px;
-            line-height: 1.15;
-            color: #071a33;
-            margin-bottom: 20px;
-        }
-
-        .why p {
-            color: #5d6875;
-            font-size: 18px;
-            margin-bottom: 25px;
-        }
-
-        .check-list {
-            list-style: none;
-        }
-
-        .check-list li {
-            margin: 15px 0;
-            font-weight: 700;
-        }
-
-        .check-list li::before {
-            content: "✓";
-            color: #1688d8;
-            font-size: 20px;
-            font-weight: 900;
-            margin-right: 12px;
-        }
-
-        .security-panel {
-            min-height: 420px;
-            border-radius: 10px;
-            background:
-                linear-gradient(rgba(7,26,51,0.35), rgba(7,26,51,0.35)),
-                url("https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1000&q=80")
-                center/cover;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.18);
-        }
-
-        /* CTA */
-
-        .cta {
-            padding: 90px 0;
-            background: #071a33;
-            color: white;
-            text-align: center;
-        }
-
-        .cta h2 {
-            font-size: 45px;
-            margin-bottom: 18px;
-        }
-
-        .cta p {
-            max-width: 650px;
-            margin: 0 auto 30px;
-            font-size: 19px;
-            color: #dce7f2;
-        }
-
-        /* FOOTER */
-
-        footer {
-            background: #041224;
-            color: white;
-            padding: 55px 0 25px;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 50px;
-        }
-
-        footer h3 {
-            margin-bottom: 15px;
-        }
-
-        footer p,
-        footer a {
-            color: #b7c4d2;
-        }
-
-        footer a:hover {
-            color: white;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.12);
-            margin-top: 40px;
-            padding-top: 20px;
-            color: #8999aa;
-            font-size: 14px;
-        }
-
-        /* MOBILE */
-
-        @media (max-width: 900px) {
-
-            nav {
-                display: none;
-            }
-
-            .service-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .why-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .security-panel {
-                min-height: 320px;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 600px) {
-
-            .service-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero {
-                min-height: 580px;
-            }
-
-            .hero p {
-                font-size: 18px;
-            }
-
-            .section-heading h2,
-            .why h2,
-            .cta h2 {
-                font-size: 34px;
-            }
-
-            .quote-button {
-                display: none;
-            }
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AITC Security | Secure Solutions</title>
+<meta name="description" content="AITC Security provides professional security cameras, security alarms, ULC fire monitoring and access control throughout Southwestern Ontario.">
+<style>
+:root{--navy:#092451;--blue:#087bd9;--light:#f6f9fc;--text:#18294b;--muted:#60708d;--border:#dbe4ef}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);background:white}a{text-decoration:none;color:inherit}
+header{height:84px;background:#fff;border-bottom:1px solid #dfe6ef;display:flex;align-items:center;padding:0 4.2%;gap:30px;position:sticky;top:0;z-index:20}
+.logo{height:70px;width:auto;object-fit:contain}.nav{margin-left:auto;display:flex;align-items:center;gap:30px;font-weight:700;font-size:14px}.nav a{padding:32px 0}.nav a:hover{color:var(--blue)}
+.quote{background:var(--blue);color:#fff!important;padding:14px 27px!important;border-radius:4px;box-shadow:0 5px 14px #087bd933}
+.hero{min-height:430px;position:relative;display:flex;align-items:center;overflow:hidden;background:linear-gradient(90deg,rgba(5,24,49,.94) 0%,rgba(5,24,49,.72) 45%,rgba(5,24,49,.18) 100%),url("https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1900&q=85") center/cover}
+.hero:after{content:"";position:absolute;right:5%;top:42px;width:31%;height:310px;background:linear-gradient(180deg,rgba(4,20,43,.15),rgba(4,20,43,.55));border-radius:6px}
+.hero-inner{position:relative;z-index:2;width:92%;max-width:1180px;margin:auto;color:#fff}.eyebrow{font-weight:800;letter-spacing:1.6px;color:#55c9ff;font-size:15px}.hero h1{font-size:48px;line-height:1.05;max-width:650px;margin:18px 0 14px}.hero p{font-size:19px;line-height:1.45;max-width:650px}.buttons{display:flex;gap:14px;margin:22px 0 28px}.btn{display:inline-flex;align-items:center;gap:12px;padding:14px 25px;border-radius:4px;font-weight:800}.btn.primary{background:var(--blue);color:#fff}.btn.outline{border:2px solid #fff;color:#fff}.trust{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;max-width:900px;margin-top:6px}.trust-item{display:flex;align-items:center;gap:12px;min-width:0}.trust-icon{width:38px;height:38px;flex:0 0 38px;border:2px solid rgba(255,255,255,.95);border-radius:50%;display:grid;place-items:center;font-size:0;position:relative}.trust-icon:after{content:"";width:8px;height:8px;border:2px solid #fff;border-radius:50%;display:block}.trust-item b{display:block;font-size:14px;line-height:1.2;white-space:nowrap}.trust-item small{display:block;font-size:12px;line-height:1.35;margin-top:2px;color:rgba(255,255,255,.9);white-space:nowrap}
+section{padding:34px 4.2%}.section-head{display:flex;justify-content:space-between;gap:50px;align-items:end;max-width:1180px;margin:auto}.kicker{color:var(--blue);font-weight:800;letter-spacing:1.5px;font-size:13px}.section-head h2{font-size:34px;margin:9px 0 0}.section-head p{max-width:460px;color:var(--muted);line-height:1.45}
+.cards{max-width:1180px;margin:18px auto 0;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.card{border:1px solid var(--border);border-radius:6px;padding:22px;min-height:315px;background:#fff;box-shadow:0 2px 9px #0b2a4d0a}.icon{width:48px;height:48px;margin-bottom:10px}.icon svg{width:48px;height:48px;stroke:var(--navy);fill:none;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}.card h3{font-size:19px;margin:5px 0 12px;color:var(--navy)}.card p,.card li{font-size:14px;line-height:1.45;color:var(--muted)}.card ul{padding-left:18px;margin:13px 0 0}.card li{margin:5px 0}.learn{display:inline-block;margin-top:16px;color:var(--blue);font-size:12px;font-weight:800}
+.audience{max-width:1180px;margin:0 auto;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:14px}.audience-card{min-height:265px;border-radius:6px;overflow:hidden;position:relative;background-size:cover;background-position:center}.audience-card:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,18,43,.93),rgba(3,18,43,.2))}.audience-content{position:relative;z-index:1;color:#fff;padding:55px 40px;max-width:570px}.audience-content h2{font-size:25px;margin:10px 0}.audience-content p{line-height:1.5;margin:0 0 18px}.audience-card.home{background-image:url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1100&q=85")}.audience-card.commercial{background-image:url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1100&q=85")}
+.contact-strip{border-top:1px solid var(--border);border-bottom:1px solid var(--border);display:grid;grid-template-columns:repeat(4,1fr);max-width:1180px;margin:0 auto;padding:20px 0}.contact-item{padding:0 20px;border-right:1px solid var(--border);display:flex;gap:13px;align-items:center}.contact-item:last-child{border:0}.contact-icon{font-size:27px}.contact-item strong{display:block;font-size:13px;color:var(--navy)}.contact-item span{display:block;font-size:12px;color:var(--muted);margin-top:3px}
+footer{background:#092451;color:#fff;padding:22px 4.2%;display:flex;justify-content:space-between;align-items:center;font-size:12px}.footer-brand{font-weight:900;letter-spacing:1.5px;font-size:17px}.footer-brand small{display:block;font-weight:500;font-style:italic;letter-spacing:0}
+@media(max-width:900px){header{height:auto;padding:10px 4%;flex-wrap:wrap}.logo{height:60px}.nav{order:3;width:100%;overflow:auto;gap:20px}.nav a{padding:10px 0}.cards{grid-template-columns:1fr 1fr}.contact-strip{grid-template-columns:1fr 1fr}.hero h1{font-size:40px}.trust{grid-template-columns:1fr;gap:14px}.trust-item b,.trust-item small{white-space:normal}}
+@media(max-width:600px){.cards,.audience{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:15px}.contact-strip{grid-template-columns:1fr}.contact-item{border-right:0;border-bottom:1px solid var(--border);padding:14px 8px}.hero{min-height:600px}.hero h1{font-size:36px}.hero:after{display:none}.buttons{flex-wrap:wrap}footer{display:block}.footer-brand{margin-bottom:10px}}
+
+.review-panel{position:absolute;right:4.5%;top:34px;width:31%;min-height:330px;padding:28px 38px;background:rgba(4,20,43,.68);border:1px solid rgba(255,255,255,.35);border-radius:8px;color:#fff;z-index:3;display:flex;flex-direction:column;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,.18)}
+.review-stars{font-size:22px;letter-spacing:3px;color:#ffd21c;margin-bottom:13px}.review-text{font-size:16px;line-height:1.55;margin:0 0 16px;min-height:100px}.review-author{font-weight:800;font-size:13px}.review-type{display:inline-block;margin-top:8px;padding:5px 10px;border-radius:20px;background:rgba(8,123,217,.28);font-size:11px}.review-dots{display:flex;justify-content:center;gap:8px;margin-top:20px}.review-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.55);transition:.25s}.review-dot.active{background:#55c9ff;transform:scale(1.2)}
+.review-arrow{position:absolute;top:50%;transform:translateY(-50%);background:none;border:0;color:#fff;font-size:32px;cursor:pointer;padding:4px 8px}.review-prev{left:8px}.review-next{right:8px}.review-panel .review-content{padding:0 8px}
+@media(max-width:900px){.review-panel{position:relative;right:auto;top:auto;width:92%;margin:20px auto 0;min-height:280px}.hero{padding:25px 0 35px}.hero-inner{width:92%}.trust{max-width:100%}}
+@media(max-width:600px){.review-panel{width:100%;padding:22px 30px}.review-text{font-size:14px}}
+</style>
 </head>
-
 <body>
-
 <header>
-    <div class="container nav">
-
-        <div class="logo">
-            AITC<span>SECURITY</span>
-        </div>
-
-        <nav>
-            <a href="#services">Services</a>
-            <a href="#why">Why AITC</a>
-            <a href="#residential">Residential</a>
-            <a href="#commercial">Commercial</a>
-            <a href="#contact">Contact</a>
-        </nav>
-
-        <a href="#contact" class="quote-button">GET A QUOTE</a>
-
-    </div>
+  <a href="index.html"><img class="logo" src="aitc-logo.png" alt="AITC Security - Secure Solutions"></a>
+  <nav class="nav">
+    <a href="#services">Our Services⌄</a><a href="#residential">Residential</a><a href="#commercial">Commercial</a><a href="#about">About</a><a href="contact.html">Contact</a><a class="quote" href="contact.html">GET A QUOTE&nbsp; →</a>
+  </nav>
 </header>
 
+<main>
 <section class="hero">
-
-    <div class="container">
-
-        <div class="hero-content">
-
-            <div class="eyebrow">
-                Professional Security Solutions
-            </div>
-
-            <h1>
-                Security<br>
-                Made Simple.
-            </h1>
-
-            <p>
-                Protect your home, business and everything that matters
-                with professionally installed security solutions from AITC.
-            </p>
-
-            <div class="hero-buttons">
-
-                <a href="#contact" class="primary-button">
-                    GET A FREE QUOTE
-                </a>
-
-                <a href="#services" class="secondary-button">
-                    EXPLORE OUR SERVICES
-                </a>
-
-            </div>
-
-        </div>
-
+  <div class="hero-inner">
+    <div class="eyebrow">PROFESSIONAL SECURITY SOLUTIONS</div>
+    <h1>Security for Today.<br>Peace of Mind for Tomorrow.</h1>
+    <p>Reliable security solutions for homes and businesses across Southwestern Ontario.</p>
+    <div class="buttons"><a class="btn primary" href="contact.html">GET A QUOTE&nbsp; →</a><a class="btn outline" href="#services">OUR SERVICES</a></div>
+    <div class="trust"><div class="trust-item"><span class="trust-icon">◯</span><div><b>Nearly 30 Years</b><small>of Experience</small></div></div><div class="trust-item"><span class="trust-icon">◯</span><div><b>A Caring Approach</b><small>Built on Family Values</small></div></div><div class="trust-item"><span class="trust-icon">◯</span><div><b>Serving Southwestern Ontario</b><small>Homes &amp; Businesses</small></div></div></div>
+  </div>
+  <aside class="review-panel" aria-label="Customer reviews">
+    <button class="review-arrow review-prev" aria-label="Previous review">‹</button>
+    <div class="review-content">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text" id="reviewText"></p>
+      <div class="review-author" id="reviewAuthor"></div>
+      <div class="review-type" id="reviewType"></div>
     </div>
-
+    <button class="review-arrow review-next" aria-label="Next review">›</button>
+    <div class="review-dots" id="reviewDots"></div>
+  </aside>
 </section>
 
-<section class="services" id="services">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <div class="eyebrow">
-                What We Do
-            </div>
-
-            <h2>
-                Complete Security Solutions
-            </h2>
-
-            <p>
-                From a single security camera to a complete commercial
-                security system, AITC designs, installs and supports
-                solutions built around your needs.
-            </p>
-
-        </div>
-
-        <div class="service-grid">
-
-            <div class="service-card">
-                <div class="service-icon">📹</div>
-                <h3>Security Cameras</h3>
-                <p>
-                    Professional video surveillance with high-definition
-                    cameras, intelligent detection and remote viewing.
-                </p>
-            </div>
-
-            <div class="service-card">
-                <div class="service-icon">🚨</div>
-                <h3>Alarm Systems</h3>
-                <p>
-                    Reliable security alarm systems designed to protect
-                    homes and businesses around the clock.
-                </p>
-            </div>
-
-            <div class="service-card">
-                <div class="service-icon">🚪</div>
-                <h3>Access Control</h3>
-                <p>
-                    Control who enters your property with professional
-                    electronic access control and door security.
-                </p>
-            </div>
-
-            <div class="service-card">
-                <div class="service-icon">🔥</div>
-                <h3>Fire Monitoring</h3>
-                <p>
-                    Professional fire alarm monitoring solutions for
-                    commercial and multi-unit properties.
-                </p>
-            </div>
-
-        </div>
-
-    </div>
-
+<section id="services">
+  <div class="section-head"><div><div class="kicker">OUR CORE SERVICES</div><h2>Built Around Your Needs</h2></div><p>From advanced camera systems to life-safety monitoring and access control, we provide complete security solutions for residential and commercial properties.</p></div>
+  <div class="cards">
+    <article class="card"><div class="icon"><svg viewBox="0 0 48 48"><path d="M6 20l25-6 3 9-25 6z"/><path d="M11 28v9M29 23v14M34 23l7 3v9M8 20l3 8"/></svg></div><h3>Security Cameras</h3><p>Professional-grade camera systems for homes and businesses, installed with care and clean wiring through finished buildings.</p><ul><li>Custom notification settings</li><li>Human &amp; vehicle classification</li><li>On-site local storage</li><li>Remote viewing</li><li>Warranty-backed solutions</li></ul><a class="learn" href="#residential">LEARN MORE&nbsp; →</a></article>
+    <article class="card"><div class="icon"><svg viewBox="0 0 48 48"><path d="M24 5l16 6v11c0 10-6.5 17-16 21C14.5 39 8 32 8 22V11z"/><path d="M16 24l5 5 11-12"/></svg></div><h3>Security Alarms</h3><p>Protect against burglary and more with smart, reliable alarm systems using trusted products like Honeywell and Johnson Controls.</p><ul><li>Burglary monitoring</li><li>Fire, flood &amp; temperature monitoring</li><li>App control &amp; notifications</li><li>Smart monitoring</li><li>Trusted, quality products</li></ul><a class="learn" href="#services">LEARN MORE&nbsp; →</a></article>
+    <article class="card"><div class="icon"><svg viewBox="0 0 48 48"><path d="M25 5c3 7-1 10 4 14 4-3 7-7 5-12 6 7 9 12 7 19-2 8-9 14-18 14-10 0-17-7-17-16 0-7 5-12 11-19 0 6 2 9 5 11 2-4 1-7 3-11z"/></svg></div><h3>Fire Monitoring</h3><p>ULC fire monitoring for fire alarms, sprinklers and other life-safety systems in apartments, schools, commercial and industrial buildings.</p><ul><li>ULC listed monitoring</li><li>Fire alarm &amp; sprinkler monitoring</li><li>Commercial &amp; industrial facilities</li><li>24/7 monitoring</li><li>Fast, reliable response</li></ul><a class="learn" href="#commercial">LEARN MORE&nbsp; →</a></article>
+    <article class="card"><div class="icon"><svg viewBox="0 0 48 48"><path d="M12 42V9h22v33M34 18h6v24H34M18 15h8M18 21h8M18 27h8M18 33h8"/></svg></div><h3>Access Control</h3><p>Control doors, gates and more with flexible access solutions for virtually any property type.</p><ul><li>Key fobs, PIN codes &amp; phone wallets</li><li>License plate recognition (LPR)</li><li>Door and gate control</li><li>Integration with security systems</li><li>Solutions for all property types</li></ul><a class="learn" href="#commercial">LEARN MORE&nbsp; →</a></article>
+  </div>
 </section>
 
-<section class="why" id="why">
-
-    <div class="container why-grid">
-
-        <div>
-
-            <div class="eyebrow">
-                Why Choose AITC
-            </div>
-
-            <h2>
-                Professional security without the complication.
-            </h2>
-
-            <p>
-                Your security system should work for you—not the other
-                way around. AITC provides professional installation,
-                dependable technology and ongoing support.
-            </p>
-
-            <ul class="check-list">
-
-                <li>Professional installation</li>
-                <li>Residential & commercial solutions</li>
-                <li>Remote system access</li>
-                <li>24/7 monitoring options</li>
-                <li>Ongoing service & support</li>
-
-            </ul>
-
-        </div>
-
-        <div class="security-panel"></div>
-
-    </div>
-
+<section>
+  <div class="audience">
+    <article id="residential" class="audience-card home"><div class="audience-content"><div class="kicker" style="color:#55c9ff">RESIDENTIAL</div><h2>Residential Security</h2><p>Protect what matters most. We install cameras, doorbells and security systems for today's connected homes.</p><a class="btn primary" href="contact.html">LEARN MORE&nbsp; →</a></div></article>
+    <article id="commercial" class="audience-card commercial"><div class="audience-content"><div class="kicker" style="color:#55c9ff">COMMERCIAL</div><h2>Commercial Security</h2><p>Scalable security solutions for offices, retail, churches, apartments, industrial buildings and more.</p><a class="btn primary" href="contact.html">LEARN MORE&nbsp; →</a></div></article>
+  </div>
 </section>
 
-<section class="cta" id="contact">
-
-    <div class="container">
-
-        <h2>
-            Ready to make security simple?
-        </h2>
-
-        <p>
-            Talk to AITC about a security solution designed specifically
-            for your property.
-        </p>
-
-        <a href="mailto:info@aitcsecurity.com" class="primary-button">
-            REQUEST A FREE QUOTE
-        </a>
-
-    </div>
-
+<section id="about" style="padding-top:18px;padding-bottom:18px">
+  <div class="contact-strip">
+    <div class="contact-item"><div class="contact-icon">☎</div><div><strong>519-473-4238</strong><span>Toll Free: 1-877-966-7966</span></div></div>
+    <div class="contact-item"><div class="contact-icon">✉</div><div><strong>admin@aitcsecurity.com</strong></div></div>
+    <div class="contact-item"><div class="contact-icon">●</div><div><strong>Unit 10 - 2018 Mallard Road</strong><span>London, Ontario&nbsp; N6H 5L8</span></div></div>
+    <div class="contact-item"><div class="contact-icon">◷</div><div><strong>Monday to Friday</strong><span>8:00 AM – 5:00 PM</span></div></div>
+  </div>
 </section>
+</main>
 
-<footer>
+<footer><div class="footer-brand">AITC SECURITY<small>Secure Solutions</small></div><div>Security for Homes. Security for Business. Security for Tomorrow.</div><div>We proudly serve<br><b>Southwestern Ontario.</b></div></footer>
 
-    <div class="container">
-
-        <div class="footer-grid">
-
-            <div>
-                <h3>AITC SECURITY</h3>
-                <p>
-                    Professional security solutions for homes and
-                    businesses.
-                </p>
-            </div>
-
-            <div>
-                <h3>Services</h3>
-                <p><a href="#services">Security Cameras</a></p>
-                <p><a href="#services">Alarm Systems</a></p>
-                <p><a href="#services">Access Control</a></p>
-                <p><a href="#services">Fire Monitoring</a></p>
-            </div>
-
-            <div>
-                <h3>Contact</h3>
-                <p>AITC Security</p>
-                <p>Ontario, Canada</p>
-                <p>
-                    <a href="mailto:info@aitcsecurity.com">
-                        info@aitcsecurity.com
-                    </a>
-                </p>
-            </div>
-
-        </div>
-
-        <div class="footer-bottom">
-            © 2026 AITC Security. All rights reserved.
-        </div>
-
-    </div>
-
-</footer>
-
+<script>
+const reviews=[
+ {text:'“AITC provided excellent service from start to finish. The camera system they installed for us works perfectly, and their team was great to deal with.”',author:'— Homeowner, London, ON',type:'Residential Client'},
+ {text:'“We have used AITC for our security needs for years. They are responsive, professional and always take the time to make sure everything is working properly.”',author:'— Business Owner, Strathroy, ON',type:'Commercial Client'},
+ {text:'“The installation was clean and professional, even with the cameras being wired through our finished building. We are very happy with the system.”',author:'— Homeowner, St. Thomas, ON',type:'Residential Client'},
+ {text:'“AITC gave us a security solution that actually fit our building and our needs. Their service and follow-up have been excellent.”',author:'— Property Manager, London, ON',type:'Commercial Client'},
+ {text:'“From the initial consultation through installation, the AITC team was knowledgeable, friendly and easy to work with. Highly recommended.”',author:'— Homeowner, Southwestern Ontario',type:'Residential Client'}
+];
+let reviewIndex=0;
+const text=document.getElementById('reviewText'),author=document.getElementById('reviewAuthor'),type=document.getElementById('reviewType'),dots=document.getElementById('reviewDots');
+reviews.forEach((_,i)=>{const d=document.createElement('span');d.className='review-dot'+(i===0?' active':'');dots.appendChild(d);});
+function showReview(i){reviewIndex=(i+reviews.length)%reviews.length;text.textContent=reviews[reviewIndex].text;author.textContent=reviews[reviewIndex].author;type.textContent=reviews[reviewIndex].type;[...dots.children].forEach((d,j)=>d.classList.toggle('active',j===reviewIndex));}
+showReview(0);
+document.querySelector('.review-prev').onclick=()=>showReview(reviewIndex-1);
+document.querySelector('.review-next').onclick=()=>showReview(reviewIndex+1);
+setInterval(()=>showReview(reviewIndex+1),6000);
+</script>
 </body>
 </html>
